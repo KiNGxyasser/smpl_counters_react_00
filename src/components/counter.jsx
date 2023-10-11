@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 class Counter extends Component{
     state = {
-        count: 0,
+        count: this.props.count,
     };
     handleIncrement = () => {
         let count = this.state.count;
@@ -42,7 +42,7 @@ class Counter extends Component{
                 <span className={this.setBadgesClasses()}>{this.state.count === 0 ? "zero" : this.state.count}</span>
                 <button className="btn btn-sm btn-secondary m-1" onClick={this.handleDecrement} disabled={this.state.count === 0}>-</button>
                 <button className="btn btn-sm btn-secondary m-1" onClick={this.handleIncrement}>+</button>
-                <button className="btn btn-sm btn-danger m-1">DELETE</button>
+                <button className="btn btn-sm btn-danger m-1" onClick={this.props.onDelete}>DELETE</button>
                     </div>
                 </div>
         );
